@@ -1,0 +1,13 @@
+<h1><%= @place.name %></h1>
+
+<p>
+  <strong>Адреса:</strong>
+  <%= @place.address %>
+</p>
+
+<p>
+  <strong>Координати:</strong>
+  <%= @place.latitude %>, <%= @place.longitude %>
+</p>
+
+<%= link_to 'Назад до списку', places_path, class: "btn btn-secondary" %>

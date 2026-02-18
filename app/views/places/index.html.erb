@@ -1,0 +1,21 @@
+<h1>Список місць</h1>
+
+<%= link_to 'Додати нове місце', new_place_path, class: 'btn btn-primary mb-3' %>
+
+<div class="row">
+  <% @places.each do |place| %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= place.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= place.address %></h6>
+          <p class="card-text">
+            Координати: <%= place.latitude %>, <%= place.longitude %>
+          </p>
+          <%= link_to 'Переглянути', place, class: "btn btn-sm btn-info" %>
+          <%= link_to 'Редагувати', edit_place_path(place), class: "btn btn-sm btn-warning" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
